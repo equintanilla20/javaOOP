@@ -1,0 +1,7 @@
+Name:    Ezekiel Quintanilla
+Course:  ITSE 2321 Object-Oriented Programming
+Program: One 
+
+Annual Salary           = $32500.00
+When paid twice a month = $1354.17
+When paid bi-weekly     = $1250.00

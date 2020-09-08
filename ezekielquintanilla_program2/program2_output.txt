@@ -1,0 +1,7 @@
+RECEIPT:
+===================
+Meal Amount: $44.50
+Tax  Amount: $03.67
+Tip  Amount: $07.23
+===================
+      TOTAL: $55.40
