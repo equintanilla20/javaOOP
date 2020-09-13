@@ -1,4 +1,8 @@
-RECEIPT:
+Name:    Ezekiel Quintanilla
+Course:  ITSE 2321 Object-Oriented Programming
+Program: Two 
+
+RECEIPT
 ===================
 Meal Amount: $44.50
 Tax  Amount: $03.67

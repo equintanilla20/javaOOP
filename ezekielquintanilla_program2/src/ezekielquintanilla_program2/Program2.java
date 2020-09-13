@@ -11,7 +11,7 @@ import java.text.DecimalFormat;
 //
 //Course:            ITSE 2321 Object-Oriented Programming - Java 
 //
-//Due Date:          9/12/2020
+//Due Date:          9/14/2020
 //
 //Instructor:        Prof. Fred Kumi 
 //
@@ -49,13 +49,13 @@ public class Program2 {
 		double totalCharge = meal + taxAmount + tipAmount;
 		
 		// Print Bill
-		System.out.println("RECEIPT");
-		System.out.println("===================");
-		System.out.println("Meal Amount: $" + df.format(meal));
-		System.out.println("Tax  Amount: $" + df.format(taxAmount));
-		System.out.println("Tip  Amount: $" + df.format(tipAmount));
-		System.out.println("===================");
-		System.out.println("      TOTAL: $" + df.format(totalCharge));
+		System.out.printf("RECEIPT");
+		System.out.printf("\n===================");
+		System.out.printf("\nMeal Amount: $" + df.format(meal));
+		System.out.printf("\nTax  Amount: $" + df.format(taxAmount));
+		System.out.printf("\nTip  Amount: $" + df.format(tipAmount));
+		System.out.printf("\n===================");
+		System.out.printf("\n      TOTAL: $" + df.format(totalCharge));
 	} // End displayBill
 	
 	public static void developerInfo()
