@@ -58,7 +58,7 @@ public class Sudoku {
 	
 	public boolean valid(int[][] bo, int num, int row, int col) {
 		// Check row
-		for (int i = 0; i < bo.length; i++) {
+		for (int i = 0; i < bo[0].length; i++) {
 			if (bo[row][i] == num && col != i) {
 				return false;
 			}
@@ -87,7 +87,7 @@ public class Sudoku {
 	public void printBoard(int[][] bo) {
 		for (int i = 0; i < bo.length; i++) {
 			if (i % 3 == 0 && i != 0) {
-				System.out.println("- - - - - - - - - - - - -");
+				System.out.println("- - - - - - - - - - -");
 			}
 			
 			for (int j = 0; j < bo[0].length; j++) {
@@ -107,7 +107,7 @@ public class Sudoku {
 	public int[] find_empty(int[][] bo) {
 		int[] results = new int[2];
 		for (int i = 0; i < (bo.length-1); i++) {
-			//System.out.println("Row: " + i);
+			System.out.println("Row: " + i);
 			for (int j = 0; j < (bo[0].length); j++) {
 				// System.out.printf(i + " ");
 				// if (i == 8 && j == 0) {
