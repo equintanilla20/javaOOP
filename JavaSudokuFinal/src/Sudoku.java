@@ -17,14 +17,14 @@ public class Sudoku {
 		//System.out.println("Rows: " + myObj.board.length);
 		//System.out.println("Cols: " + myObj.board[0].length);
 		System.out.printf("\nUnsolved board: \n");
-		myObj.printboardard(myObj.board);
+		myObj.printboard(myObj.board);
 		
 		//System.out.println("Row 8 column 0: " + myObj.board[8][8]);
 		
 		myObj.solve(myObj.board);
 		
 		System.out.printf("\nSolved board: \n");
-		myObj.printboardard(myObj.board);
+		myObj.printboard(myObj.board);
 		
 	}
 	
@@ -84,7 +84,7 @@ public class Sudoku {
 		return true;
 	}
 	
-	public void printboardard(int[][] board) {
+	public void printboard(int[][] board) {
 		for (int i = 0; i < board.length; i++) {
 			if (i % 3 == 0 && i != 0) {
 				System.out.println("- - - - - - - - - - -");
