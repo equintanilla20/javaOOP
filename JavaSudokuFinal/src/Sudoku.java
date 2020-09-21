@@ -1,6 +1,6 @@
 public class Sudoku {
 	
-	public int[][] boardard = {
+	public int[][] board = {
 			{7, 8, 0, 4, 0, 0, 1, 2, 0},
 			{6, 0, 0, 0, 7, 5, 0, 0, 9},
 			{0, 0, 0, 6, 0, 1, 0, 7, 8},
@@ -14,17 +14,17 @@ public class Sudoku {
 
 	public static void main(String[] args) {
 		Sudoku myObj = new Sudoku();
-		//System.out.println("Rows: " + myObj.boardard.length);
-		//System.out.println("Cols: " + myObj.boardard[0].length);
-		System.out.printf("\nUnsolved boardard: \n");
-		myObj.printboardard(myObj.boardard);
+		//System.out.println("Rows: " + myObj.board.length);
+		//System.out.println("Cols: " + myObj.board[0].length);
+		System.out.printf("\nUnsolved board: \n");
+		myObj.printboardard(myObj.board);
 		
-		//System.out.println("Row 8 column 0: " + myObj.boardard[8][8]);
+		//System.out.println("Row 8 column 0: " + myObj.board[8][8]);
 		
-		myObj.solve(myObj.boardard);
+		myObj.solve(myObj.board);
 		
-		System.out.printf("\nSolved boardard: \n");
-		myObj.printboardard(myObj.boardard);
+		System.out.printf("\nSolved board: \n");
+		myObj.printboardard(myObj.board);
 		
 	}
 	
