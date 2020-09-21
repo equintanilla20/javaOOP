@@ -32,7 +32,7 @@ public class Sudoku {
 		int row;
 		int col;
 		
-		int[] find = find_empty(bo);
+		int[] find = findEmpty(bo);
 		if (find[0] == -1) {
 			return true;
 		} else {
@@ -104,7 +104,7 @@ public class Sudoku {
 		}
 	}
 	
-	public int[] find_empty(int[][] bo) {
+	public int[] findEmpty(int[][] bo) {
 		int[] results = new int[2];
 		for (int i = 0; i < (bo.length-1); i++) {
 			System.out.println("Row: " + i);
