@@ -9,67 +9,76 @@ public class Sudoku {
 			{9, 0, 4, 0, 6, 0, 0, 0, 5},
 			{0, 7, 0, 3, 0, 0, 0, 1, 2},
 			{1, 2, 0, 0, 0, 7, 4, 0, 0},
-			{0, 4, 9, 2, 0, 6, 0, 0, 7}
+			{0, 0, 0, 0, 0, 6, 0, 0, 7}
 	};
 
 	public static void main(String[] args) {
+		
+		// Initialize object
 		Sudoku myObj = new Sudoku();
-		//System.out.println("Rows: " + myObj.board.length);
-		//System.out.println("Cols: " + myObj.board[0].length);
+		
+		// Show unsolved board
 		System.out.printf("\nUnsolved board: \n");
 		myObj.printBoard(myObj.board);
+
 		
-		//System.out.println("Row 8 column 0: " + myObj.board[8][8]);
-		
+		// Solve board
 		myObj.solve(myObj.board);
 		
+		// Show solved board
 		System.out.printf("\nSolved board: \n");
 		myObj.printBoard(myObj.board);
 		
 	}
 	
+	// solve method
 	public boolean solve(int[][] board) {
 		int row;
 		int col;
 		
 		int[] find = findEmpty(board);
-		if (find[0] == -1) {
+		if (find == null) {
 			return true;
 		} else {
 			row = find[0];
 			col = find[1];
+			
 		}
 		
-		for (int i = 0; i < 10; i++) {
+		for (int i = 1; i < 10; i++) {
 			if (valid(board, i, row, col)) {
 				board[row][col] = i;
 				
 				if (solve(board)) {
 					return true;
 				}
-				
 				board[row][col] = 0;
-				
 			}
 		}
 		
 		return false;
-	}
+	} // End solve method
 	
+	// Valid method
 	public boolean valid(int[][] board, int num, int row, int col) {
-		// Check row
+		
+		// Check row for validity
 		for (int i = 0; i < board[0].length; i++) {
 			if (board[row][i] == num && col != i) {
+
 				return false;
 			}
 		}
 		
+		// Check Column for validity
 		for (int i = 0; i < board.length; i++) {
 			if (board[i][col] == num && row != i) {
+
 				return false;
 			}
 		}
 		
+		// Check box values
 		int boardx_x = col / 3;
 		int boardx_y = row / 3;
 		
@@ -82,12 +91,13 @@ public class Sudoku {
 		}
 		
 		return true;
-	}
+	} // End valid
 	
+	// printBoard method
 	public void printBoard(int[][] board) {
 		for (int i = 0; i < board.length; i++) {
 			if (i % 3 == 0 && i != 0) {
-				System.out.println("- - - - - - - - - - -");
+				System.out.println("---------------------");
 			}
 			
 			for (int j = 0; j < board[0].length; j++) {
@@ -102,18 +112,15 @@ public class Sudoku {
 				}
 			}
 		}
-	}
+	} // End printBoard
 	
+	// findEmpty method
 	public int[] findEmpty(int[][] board) {
 		int[] results = new int[2];
-		for (int i = 0; i < (board.length-1); i++) {
-			System.out.println("Row: " + i);
+		for (int i = 0; i < (board.length); i++) {
 			for (int j = 0; j < (board[0].length); j++) {
-				// System.out.printf(i + " ");
-				// if (i == 8 && j == 0) {
-				// 	System.out.println("Row 8: " + board[8][0]);
-				// }
 				if (board[i][j] == 0) {
+					// Return values pinpointing an empty cell
 					results[0] = i;
 					results[1] = j;
 					return results;
@@ -121,7 +128,7 @@ public class Sudoku {
 			}
 		}
 		
-		results[0] = -1;
-		return results;
-	}
+		// Return null if no empty cell is found
+		return null;
+	} // End findEmpty
 }
